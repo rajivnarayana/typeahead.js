@@ -159,6 +159,12 @@ var Bloodhound = (function() {
           }) && nonDuplicates.push(r);
         });
 
+        //#Index remotes if we have to.
+        if (that.remote.indexResponse) { 
+          that.index.add(nonDuplicates); 
+          nonDuplicates = that.index.search(query); 
+        }
+
         async && async(nonDuplicates);
       }
     },

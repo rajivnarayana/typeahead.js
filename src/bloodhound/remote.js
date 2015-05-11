@@ -15,6 +15,9 @@ var Remote = (function() {
     this.prepare = o.prepare;
     this.transform = o.transform;
 
+    //#index remotes if we have to.
+    this.indexRemote = o.indexRemote;
+
     this.transport = new Transport({
       cache: o.cache,
       limiter: o.limiter,
